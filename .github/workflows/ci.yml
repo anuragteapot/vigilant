@@ -40,11 +40,11 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
+      - name: Run build
+        run: npm run build
+
       - name: Run imorph
         uses: imorphio/vigilant-action@main
         with:
           imorphSecret: ${{ secrets.IMORPH_SECRET }}
           imorphDomain: ${{ secrets.IMORPH_DOMAIN }}
-
-      - name: Run build
-        run: npm run build
